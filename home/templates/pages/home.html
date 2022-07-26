@@ -1,0 +1,548 @@
+{% extends "pages/index.html" %}
+
+{% block title %}Trang chủ - JS Club{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'js/home.js' %}" type="text/javascript">
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<!-- font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=BIZ+UDMincho&family=Roboto+Condensed:wght@300&family=Smooch+Sans:wght@100&display=swap"
+  rel="stylesheet">
+
+<!-- video -->
+<section class="home" id="homesec">
+  <video class="video-slide active" src="{% static 'img/bk.mp4' %}" autoplay muted loop></video>
+  <video class="video-slide" src="{% static 'img/bk2.mp4' %}" autoplay muted loop></video>
+  <video class="video-slide" src="{% static 'img/bk3.mp4' %}" autoplay muted loop></video>
+  <div class="content active">
+    <h1 class="headtx">JS CLUB<br><span>Who are they?</span></h1>
+    <p>JS Club là tên viết tắt của Japanese Software Engineers Club – Câu lạc bộ Kỹ sư phần mềm Nhật Bản được thành lập
+      vào tháng 2/2014. Từ những ngày đầu thành lập, JS mang sứ mạng trở thành một cộng đồng kết nối các sinh viên theo
+      chuyên ngành hẹp JS nói riêng và toàn thể các bạn sinh viên nói chung.</p>
+    <a id="read-button">Read More</a>
+  </div>
+  <div class="content">
+    <h1 class="headtx">JS GENERATION10<br><span style="font-size: 1.5rem;">#JSMemberRecruitment2022</span></h1>
+    <p>Để hoạt động và vận hành chức năng này, JS cần phải hợp tác với những người đến từ tương lai. Vậy những người đó
+      là ai? Liệu họ có cùng JS tạo ra những thay đổi lớn để giúp cho sứ mệnh phát triển con người thành công hay không?
+      Họ có sẵn sàng cùng JS bước tiếp chặng đường tới để nghiên cứu thành công phần mềm du hành thời gian này?</p>
+    <a id="read-button">Read More</a>
+  </div>
+  <div class="content">
+    <h1 class="headtx">#JS2020<br><span>LOOK BACK 2020</span></h1>
+    <p>Thời khắc giao thừa sắp điểm, tết cổ truyền 2021 sẽ chính thức bắt đầu. Trước khi bắt đầu một năm mới đầy hứng
+      khởi và hào hứng, hãy cùng JS Club điểm lại một năm đầy biến động của CLB nói riêng và của thế giới nói chung.
+      Chúng ta đã có một năm cực kì thành công đó các JSer.</p>
+    <a id="read-button">Read More</a>
+  </div>
+  <div class="media-icons">
+    <a href="https://www.facebook.com/fu.jsclub/?ref=page_internal" target="_blank"><i
+        class="fab fa-facebook-f"></i></a>
+    <a href="https://www.instagram.com/fptu.jsclub/?fbclid=IwAR1F8SXmh88tHmAPTjpaaH5cXjBqpRgZBb91GkTyb69HwBqX45hIlESjv48"
+      target="_blank"><i class="fab fa-instagram"></i></a>
+    <a href="mailto:jsclub.fpt@gmail.com?subject=CONTACT"><i class="fa fa-envelope"></i></a>
+  </div>
+  <div class="slider-navigation">
+    <div class="nav-btn active"></div>
+    <div class="nav-btn"></div>
+    <div class="nav-btn"></div>
+  </div>
+</section>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script type="text/javascript">
+  //Javacript for responsive navigation menu
+  const menuBtn = document.querySelector(".menu-btn");
+  const navigation = document.querySelector(".navigation");
+
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    navigation.classList.toggle("active");
+  });
+
+  //Javacript for video slider navigation
+  const btns = document.querySelectorAll(".nav-btn");
+  const slides = document.querySelectorAll(".video-slide");
+  const contents = document.querySelectorAll(".content");
+
+  var sliderNav = function (manual) {
+    btns.forEach((btn) => {
+      btn.classList.remove("active");
+    });
+
+    slides.forEach((slide) => {
+      slide.classList.remove("active");
+    });
+
+    contents.forEach((content) => {
+      content.classList.remove("active");
+    });
+
+    btns[manual].classList.add("active");
+    slides[manual].classList.add("active");
+    contents[manual].classList.add("active");
+  }
+
+  btns.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+      sliderNav(i);
+    });
+  });
+
+  window.addEventListener("scroll", function () {
+    var header = document.querySelector("header");
+    header.classList.toggle("sticky", window.scrollY > 0);
+  })
+
+  $("#read-button").click(function () {
+    $('html, body').animate({
+      scrollTop: $("#intro-part").offset().top - 100
+    }, 1000);
+  });
+</script>
+<div class="homee"
+  style="padding-left: 50px; padding-right: 50px;background: linear-gradient(to right, rgb(27, 26, 26), rgb(202, 168, 203));">
+  <!-- introduction -->
+  <div class="intro">
+    <div class="container" id="intro">
+      <img src="{% static 'img/backintro.png' %}" style="width:100%;">
+      <div class="centered" id="intro-part">
+        <h1 class="texthead">JS CLUB</h1>
+        <p class="textintro">JS Club là tên viết tắt của Japanese Software Engineers Club – Câu lạc bộ Kỹ sư phần mềm
+          Nhật Bản được thành lập vào tháng 2/2014. Từ những ngày đầu thành lập, JS mang sứ mạng trở thành một cộng đồng
+          kết nối các sinh viên theo chuyên ngành hẹp JS nói riêng và toàn thể các bạn sinh viên nói chung.</p>
+        <h5 class="textsub">#JSClub</h5>
+        <h5 class="textsub">#JSGeneration10</h5>
+        <h5 class="textsub">#MemberRecruitment2022</h5>
+      </div>
+    </div>
+  </div>
+
+  <hr class="my-4">
+  <!--slideeeeeeeeeeeeeeeeee  -->
+  <div class='parent'>
+    <div class='slider'>
+      <button type="button" id='right' class='right' name="button">
+
+        <svg version="1.1" id="Capa_1" width='40px' height='40px ' xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 477.175 477.175"
+          style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve">
+          <g>
+            <path style='fill: #9d9d9d;' d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5
+            c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z
+            " />
+          </g>
+
+        </svg>
+
+      </button>
+      <button type="button" id='left' class='left' name="button">
+        <svg version="1.1" id="Capa_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          x="0px" y="0px" viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;"
+          xml:space="preserve">
+          <g>
+            <path style='fill: #9d9d9d;' d="M145.188,238.575l215.5-215.5c5.3-5.3,5.3-13.8,0-19.1s-13.8-5.3-19.1,0l-225.1,225.1c-5.3,5.3-5.3,13.8,0,19.1l225.1,225
+            c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4c5.3-5.3,5.3-13.8,0-19.1L145.188,238.575z" />
+          </g>
+        </svg>
+      </button>
+      <svg id='svg2' class='up2' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <circle id='circle1' class='circle1 steap' cx="34px" cy="49%" r="20" />
+        <circle id='circle2' class='circle2 steap' cx="34px" cy="49%" r="100" />
+        <circle id='circle3' class='circle3 steap' cx="34px" cy="49%" r="180" />
+        <circle id='circle4' class='circle4 steap' cx="34px" cy="49%" r="260" />
+        <circle id='circle5' class='circle5 steap' cx="34px" cy="49%" r="340" />
+        <circle id='circle6' class='circle6 steap' cx="34px" cy="49%" r="420" />
+        <circle id='circle7' class='circle7 steap' cx="34px" cy="49%" r="500" />
+        <circle id='circle8' class='circle8 steap' cx="34px" cy="49%" r="580" />
+        <circle id='circle9' class='circle9 steap' cx="34px" cy="49%" r="660" />
+      </svg>
+      <svg id='svg1' class='up2' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <circle id='circle10' class='circle10 steap' cx="648px" cy="49%" r="20" />
+        <circle id='circle11' class='circle11 steap' cx="648px" cy="49%" r="100" />
+        <circle id='circle12' class='circle12 steap' cx="648px" cy="49%" r="180" />
+        <circle id='circle13' class='circle13 steap' cx="648px" cy="49%" r="260" />
+        <circle id='circle14' class='circle14 steap' cx="648px" cy="49%" r="340" />
+        <circle id='circle15' class='circle15 steap' cx="648px" cy="49%" r="420" />
+        <circle id='circle16' class='circle16 steap' cx="648px" cy="49%" r="500" />
+        <circle id='circle17' class='circle17 steap' cx="648px" cy="49%" r="580" />
+        <circle id='circle18' class='circle18 steap' cx="648px" cy="49%" r="660" />
+      </svg>
+      <div id='slide1' class='slide1 up1'></div>
+      <div id='slide2' class='slide2'></div>
+      <div id='slide3' class='slide3'></div>
+      <div id='slide4' class='slide4'></div>
+      <div id='slide5' class='slide5'></div>
+      <div id='slide6' class='slide6'></div>
+      <div id='slide7' class='slide7'></div>
+      <div id='slide8' class='slide8'></div>
+      <div id='slide9' class='slide9'></div>
+      <div id='slide10' class='slide10'></div>
+    </div>
+  </div>
+  <script>
+    var curpage = 1;
+    var sliding = false;
+    var click = true;
+    var left = document.getElementById("left");
+    var right = document.getElementById("right");
+    var pagePrefix = "slide";
+    var pageShift = 500;
+    var transitionPrefix = "circle";
+    var svg = true;
+
+    function leftSlide() {
+      if (click) {
+        if (curpage == 1) curpage = 11;
+        console.log("woek");
+        sliding = true;
+        curpage--;
+        svg = true;
+        click = false;
+        for (k = 1; k <= 10; k++) {
+          var a1 = document.getElementById(pagePrefix + k);
+          a1.className += " tran";
+        }
+        setTimeout(() => {
+          move();
+        }, 200);
+        setTimeout(() => {
+          for (k = 1; k <= 10; k++) {
+            var a1 = document.getElementById(pagePrefix + k);
+            a1.classList.remove("tran");
+          }
+        }, 1400);
+      }
+    }
+
+    function rightSlide() {
+      if (click) {
+        if (curpage == 10) curpage = 0;
+        console.log("woek");
+        sliding = true;
+        curpage++;
+        svg = false;
+        click = false;
+        for (k = 1; k <= 10; k++) {
+          var a1 = document.getElementById(pagePrefix + k);
+          a1.className += " tran";
+        }
+        setTimeout(() => {
+          move();
+        }, 200);
+        setTimeout(() => {
+          for (k = 1; k <= 10; k++) {
+            var a1 = document.getElementById(pagePrefix + k);
+            a1.classList.remove("tran");
+          }
+        }, 1400);
+      }
+    }
+
+    function move() {
+      if (sliding) {
+        sliding = false;
+        if (svg) {
+          for (j = 1; j <= 9; j++) {
+            var c = document.getElementById(transitionPrefix + j);
+            c.classList.remove("steap");
+            c.setAttribute("class", transitionPrefix + j + " streak");
+            console.log("streak");
+          }
+        } else {
+          for (j = 10; j <= 18; j++) {
+            var c = document.getElementById(transitionPrefix + j);
+            c.classList.remove("steap");
+            c.setAttribute("class", transitionPrefix + j + " streak");
+            console.log("streak");
+          }
+        }
+        setTimeout(() => {
+          for (i = 1; i <= 10; i++) {
+            if (i == curpage) {
+              var a = document.getElementById(pagePrefix + i);
+              a.className += " up1";
+            } else {
+              var b = document.getElementById(pagePrefix + i);
+              b.classList.remove("up1");
+            }
+          }
+          sliding = true;
+        }, 600);
+        setTimeout(() => {
+          click = true;
+        }, 1700);
+
+        setTimeout(() => {
+          if (svg) {
+            for (j = 1; j <= 9; j++) {
+              var c = document.getElementById(transitionPrefix + j);
+              c.classList.remove("streak");
+              c.setAttribute("class", transitionPrefix + j + " steap");
+            }
+          } else {
+            for (j = 10; j <= 18; j++) {
+              var c = document.getElementById(transitionPrefix + j);
+              c.classList.remove("streak");
+              c.setAttribute("class", transitionPrefix + j + " steap");
+            }
+            sliding = true;
+          }
+        }, 850);
+        setTimeout(() => {
+          click = true;
+        }, 1700);
+      }
+    }
+
+    left.onmousedown = () => {
+      leftSlide();
+    };
+
+    right.onmousedown = () => {
+      rightSlide();
+    };
+
+    document.onkeydown = e => {
+      if (e.keyCode == 37) {
+        leftSlide();
+      } else if (e.keyCode == 39) {
+        rightSlide();
+      }
+    };
+
+    //for codepen header
+    // setTimeout(() => {
+    // 	rightSlide();
+    // }, 500);
+
+    window.addEventListener("scroll", function () {
+      var header = document.querySelector("header");
+      header.classList.toggle("sticky", window.scrollY > 0);
+    })
+  </script>
+  <style>
+    .slide1 {
+      background-image: url('static/img/jsclub/1.png');
+    }
+
+    .slide2 {
+      background-image: url('static/img/jsclub/2.png');
+    }
+
+    .slide3 {
+      background-image: url('static/img/jsclub/3.png');
+    }
+
+    .slide4 {
+      background-image: url('static/img/jsclub/4.png');
+    }
+
+    .slide5 {
+      background-image: url('static/img/jsclub/5.png');
+    }
+
+    .slide6 {
+      background-image: url('static/img/jsclub/6.png');
+    }
+
+    .slide7 {
+      background-image: url('static/img/jsclub/7.png');
+    }
+
+    .slide8 {
+      background-image: url('static/img/jsclub/8.png');
+    }
+
+    .slide9 {
+      background-image: url('static/img/jsclub/9.png');
+    }
+
+    .slide10 {
+      background-image: url('static/img/jsclub/10.png');
+    }
+  </style>
+  <hr class="my-4">
+
+  <!-- news test -->
+  <div class="card-new">
+    <div class="row">
+      <div class="col-sm-4 card" id="card1">
+        <div class="card-content">
+          <h2 class="card-title">Phạm Thị Oanh</h2>
+          <p class="card-body">Gây ấn tượng bằng sự nhí nhảnh và thân thiện nhưng Phạm Thị Oanh lại là một người rất
+            trách nhiệm và tình cảm trong mắt mọi người, đặc biệt là các thành viên trong ngôi nhà JS.</p>
+          <a href="https://daihoc.fpt.edu.vn/nu-chu-nhiem-thich-sieu-anh-hung-cua-clb-js/" class="buttonnew"
+            target="_blank">Đọc thêm</a>
+        </div>
+      </div>
+      <div class="col-sm-4 card" id="card2">
+        <div class="card-content">
+          <h2 class="card-title">Khuất Mạnh Hoàng</h2>
+          <p class="card-body">Không chỉ nổi bật qua các hoạt động phong trào của trường Đại học FPT, Khuất Mạnh Hoàng
+            còn có thành tích học tập siêu ấn tượng.Cùng tìm hiểu kĩ hơn về cậu bạn đa tài này nhé!</p>
+          <a href="https://hanoi.fpt.edu.vn/khuat-manh-hoang-hanh-trinh-tu-coc-vang-hut-den-giac-mo-thanh-hien-thuc.html"
+            class="buttonnew" target="_blank">Đọc thêm</a>
+        </div>
+      </div>
+      <div class="col-sm-4 card" id="card3">
+        <div class="card-content">
+          <h2 class="card-title">Luyện Bảo Anh</h2>
+          <p class="card-body">“Biệt danh của mình là Bảo Anh Glee. Vì mình thích xem phim Glee và trong phim, Glee là
+            một câu lạc bộ của những người tài năng, không phân biệt giới tính, tôn giáo, chủng tộc.."</p>
+          <a href="https://daihoc.fpt.edu.vn/cuu-chu-nhiem-clb-js-me-lap-trinh/" class="buttonnew" target="_blank">Đọc
+            thêm</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    #card1 {
+      background-image: url('static/img/cardfile/1.png');
+    }
+
+    #card2 {
+      background-image: url('static/img/cardfile/2.png');
+    }
+
+    #card3 {
+      background-image: url('static/img/cardfile/3.png');
+    }
+  </style>
+
+  <hr class="my-4">
+  <!-- q/a test -->
+  <div class="container qaa">
+
+    <div class="container-inner qaa-inner">
+
+      <!-- Section Title -->
+
+      <div class="section-title">
+
+        <h1>Questions and Answers</h1>
+
+      </div>
+
+      <!-- Tab / Collapse Section -->
+
+      <div class="tab-container">
+
+        <!-- Tab 1 -->
+
+        <div class="tab-accordian">
+
+          <div class="titleWrapper inactive">
+            <h3>1. Tại sao lại là Kỹ sư phần mềm Nhật Bản?</h3>
+
+            <div class="collapse-icon">
+              <div class="acc-close"></div>
+              <div class="acc-open"></div>
+            </div>
+          </div>
+
+          <div id="descwrapper" class="desWrapper">
+            <p>Bởi vì JS không chỉ là nơi giao lưu của những bạn trẻ đam mê lập trình mà còn là nơi các bạn có thể thỏa
+              sức khám phá và học hỏi những điều mới lạ về văn hóa và ngôn ngữ của “Xứ sở hoa anh đào” nữa đó!</p>
+          </div>
+
+        </div>
+        <div class="tab-accordian">
+
+          <div class="titleWrapper inactive">
+            <h3>2. Phân ban nào đông nhất ở JS Club?</h3>
+
+            <div class="collapse-icon">
+              <div class="acc-close"></div>
+              <div class="acc-open"></div>
+            </div>
+          </div>
+
+          <div id="descwrapper" class="desWrapper">
+            <p>Trong đại gia đình JS, Văn hóa và Chuyên môn chính là hai phân ban đông thành viên nhất, năng nổ nhất.
+            </p>
+          </div>
+
+        </div>
+        <div class="tab-accordian">
+
+          <div class="titleWrapper inactive">
+            <h3>3. Học chuyên ngành khác liệu có thể tham gia JS Club?</h3>
+
+            <div class="collapse-icon">
+              <div class="acc-close"></div>
+              <div class="acc-open"></div>
+            </div>
+          </div>
+
+          <div id="descwrapper" class="desWrapper">
+            <p>Tất nhiên là có rồi! Không chỉ chuyên về lập trình và ngôn ngữ Nhật, JS còn có rất nhiều hoạt động cần có
+              sự góp sức của những gương mặt đến từ khối kinh tế, đồ họa,... ở các phân ban như Truyền thông hay Đối
+              ngoại đó!</p>
+          </div>
+
+        </div>
+        <div class="tab-accordian">
+
+          <div class="titleWrapper inactive">
+            <h3>4. Bạn có đam mê lập trình nhưng không biết code, liệu có thể vào JS được không?</h3>
+
+            <div class="collapse-icon">
+              <div class="acc-close"></div>
+              <div class="acc-open"></div>
+            </div>
+          </div>
+
+          <div id="descwrapper" class="desWrapper">
+            <p>Miễn là bạn có đam mê và đủ lòng kiên trì, JS sẽ tạo điều kiện cho bạn có thể bắt đầu đam mê của mình
+              bằng những lớp training về code, ngôn ngữ. Ngoài ra, JS còn có vô vàn những anh chị có thành tích cực
+              khủng sẵn sàng giải đáp những khúc mắc của bạn nữa.</p>
+          </div>
+
+        </div>
+        <div class="tab-accordian">
+
+          <div class="titleWrapper inactive">
+            <h3>5. Tại sao JS CLUB lại được mệnh danh là "CLB CÓC VÀNG"?</h3>
+
+            <div class="collapse-icon">
+              <div class="acc-close"></div>
+              <div class="acc-open"></div>
+            </div>
+          </div>
+
+          <div id="descwrapper" class="desWrapper">
+            <p>JS còn được mệnh danh là “CLB Cóc Vàng” vì hầu như các kỳ, danh hiệu Cóc Vàng khối kỹ thuật của FPT cũng
+              được các bạn nhà JS bao trọn gói. Không chỉ về học thuật, CLB cũng có các thành viên sở hữu danh hiệu “Cóc
+              phong trào” vô cùng sáng giá.</p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+  <script>
+    jQuery(document).ready(function () {
+      jQuery('.titleWrapper').click(function () {
+        var toggle = jQuery(this).next('div#descwrapper');
+        jQuery(toggle).slideToggle("slow");
+      });
+      jQuery('.inactive').click(function () {
+        jQuery(this).toggleClass('inactive active');
+      });
+    });
+
+  </script>
+
+
+  <!-- icon q/a -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  {% endblock %}

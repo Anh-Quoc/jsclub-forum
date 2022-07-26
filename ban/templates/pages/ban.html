@@ -1,0 +1,342 @@
+{% extends "pages/index.html" %}
+
+{% block title %}Phân Ban - JS CLUB{% endblock %}
+
+{% block content %}
+{% load static %}
+<div id="ban-body">
+    <div class="ban-banner">
+        <img src="{% static 'img/background4.jpg' %}" alt="">
+        <div class="blur">
+            <div class="ban-intro container">
+                <h1>Các Phòng Ban</h1>
+                <p class="ban-description">
+                    Câu lạc bộ Sinh viên là nơi tập hợp những sinh viên có cùng sở thích, cùng nhu cầu nhằm một mục đích
+                    nhất định.
+
+                    Câu lạc bộ Sinh viên vừa là một loại hình tổ chức, vừa là một phương thức hoạt động, là một bộ phận
+                    quan trọng của tổ chức Hội Sinh viên, nhằm hỗ trợ giải quyết những vấn đề phức tạp, quan trọng trong
+                    học tập và cuộc sống hàng ngày, đáp ứng những nhu cầu chính đáng của sinh viên.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="ban-scroll-cover container">
+        <h1 style="text-align: center; padding: 2rem 20px 2rem 20px">Các ban</h1>
+        <div class="container">
+            <div class="row ban-row-responsive">
+                <div class="col ban-row-navigation reveal" id="button-chuyenmon"><img
+                        src="{% static 'img/chuyenmon1.png' %}" alt="" class="img-scroll">
+                    <h3 class="ban-navigation-heading">Chuyên Môn</h3>
+                </div>
+                <div class="col ban-row-navigation reveal" id="button-vanhoa"><img src="{% static 'img/vanhoa.png' %}"
+                        alt="" class="img-scroll">
+                    <h3 class="ban-navigation-heading">Văn Hóa</h3>
+                </div>
+                <div class="col ban-row-navigation reveal" id="button-truyenthong"><img
+                        src="{% static 'img/truyenthong.png' %}" alt="" class="img-scroll">
+                    <h3 class="ban-navigation-heading">Truyền Thông</h3>
+                </div>
+                <div class="col ban-row-navigation reveal" id="button-doingoai"><img
+                        src="{% static 'img/doingoai.png' %}" alt="" class="img-scroll">
+                    <h3 class="ban-navigation-heading">Đối Ngoại</h3>
+                </div>
+                <div class="col ban-row-navigation reveal" id="button-noidung"><img src="{% static 'img/noidung.png' %}"
+                        alt="" class="img-scroll">
+                    <h3 class="ban-navigation-heading">Nội dung</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="container" style="margin-top: 20px;">
+    <div class="ban-content">
+        <div class="row">
+            <div class="col-12 col-md-6  ban-content-col ">
+                <h1 class="ban-content-heading" id="content-chuyenmon">Ban chuyên môn</h1>
+                <p class="ban-content-text">Mang trong mình trọng trách giữ gìn giá trị “cốt lõi” của một CLB học thuật,
+                    người ban Chuyên môn luôn luôn sáng tạo và đổi mới qua các buổi techtalk, các lớp training hay thậm
+                    chí cả những cuộc thi học thuật nữa.</p>
+            </div>
+            <div class="col-12 col-md-6  ban-content-image ">
+                <img src="{% static 'img/anh-chuyenmon.png' %}" alt="" class="ban-content-image">
+            </div>
+        </div>
+
+        <div class="row ban-content-responsive">
+            <div class="col-12 col-md-6 ban-content-image ">
+                <img src="{% static 'img/anh-vanhoa.png' %}" alt="" class="ban-content-image">
+            </div>
+            <div class="col-12 col-md-6 ban-content-col ">
+                <h1 class="ban-content-heading" id="content-vanhoa">Ban văn hóa</h1>
+                <p class="ban-content-text">Biggame training là sự kiện thường niên được tổ chức với quy mô lớn nhất
+                    diễn ra vào cuối mỗi kì training ProPTIT. Với sự tham gia đông đảo của các anh chị, các bạn và các
+                    thành viên training, sự kiện giúp các thành viên training được giao lưu làm quen với nhau và tạo
+                    được nhiều dấu ấn, kỷ niệm khó quên trong lòng mỗi người.</p>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-12 col-md-6 ban-content-col">
+                <h1 class="ban-content-heading" id="content-truyenthong">Ban truyền thông</h1>
+                <p class="ban-content-text">Biggame training là sự kiện thường niên được tổ chức với quy mô lớn nhất
+                    diễn ra vào cuối mỗi kì training ProPTIT. Với sự tham gia đông đảo của các anh chị, các bạn và các
+                    thành viên training, sự kiện giúp các thành viên training được giao lưu làm quen với nhau và tạo
+                    được nhiều dấu ấn, kỷ niệm khó quên trong lòng mỗi người.</p>
+            </div>
+            <div class="col-12 col-md-6 ban-content-image ">
+                <img src="{% static 'img/anh-truyenthong.png' %}" alt="" class="ban-content-image">
+            </div>
+        </div>
+
+        <div class="row ban-content-responsive">
+            <div class="col-12 col-md-6 ban-content-image ">
+                <img src="{% static 'img/anh-doingoai.png' %}" alt="" class="ban-content-image">
+            </div>
+            <div class="col-12 col-md-6 col ban-content-col ">
+                <h1 class="ban-content-heading" id="content-doingoai">Ban đối ngoại</h1>
+                <p class="ban-content-text">Biggame training là sự kiện thường niên được tổ chức với quy mô lớn nhất
+                    diễn ra vào cuối mỗi kì training ProPTIT. Với sự tham gia đông đảo của các anh chị, các bạn và các
+                    thành viên training, sự kiện giúp các thành viên training được giao lưu làm quen với nhau và tạo
+                    được nhiều dấu ấn, kỷ niệm khó quên trong lòng mỗi người.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6 ban-content-col">
+                <h1 class="ban-content-heading" id="content-noidung">Ban nội dung</h1>
+                <p class="ban-content-text">Ban Nội dung chính là một phần cấu tạo nên JS với nhiệm vụ lên nội dung, lên
+                    ý tưởng, concept cho các sự kiện. Làm việc ở ban Nội dung, bạn còn cần có một tinh thần vô cùng
+                    trách nhiệm, kỹ năng làm việc nhóm vì họ thường xuyên phải phối hợp với các phân ban khác để làm nên
+                    một chương trình thành công.
+                </p>
+            </div>
+            <div class="col-12 col-md-6 ban-content-image ">
+                <img src="{% static 'img/anh-noidung.png' %}" alt="" class="ban-content-image">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <h1 style="color: #f06a72;text-align: center;;margin-top: 51px;">Các trưởng ban của CLB</h1>
+    <div class="row">
+        <div class="col">
+            <div class="card reveal">
+                <div class="card__inner" id="card1">
+                    <div class="card__face card__face--front">
+                        <h2>Ban chuyên môn</h2>
+                        <img class="ban-card-img" src="{% static 'img/background-chuyenmon.png' %}"
+                            style="width: 100%;height: 100%;display: block;">
+                    </div>
+                    <div class="card__face card__face--back">
+                        <div class="card__content">
+                            <div class="card__header">
+                                <img src="{% static 'img/ava-chuyenmon.jpg' %}" alt="" class="pp" />
+                                <h2>Bằng Hữu Phạm</h2>
+                            </div>
+                            <div class="card__body">
+                                <h3>Chủ tịch ban chuyên môn</h3>
+                                <p>Những người được cho là “đầu não”, là những người trực tiếp giám sát và triển khai
+                                    những thông tin mang tính học thuật cao không ai khác chính là ban Chuyên môn của
+                                    JS.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card reveal">
+                <div class="card__inner" id="card2">
+                    <div class="card__face card__face--front">
+                        <h2>Ban Văn hóa</h2>
+                        <img class="ban-card-img" src="{% static 'img/background-vanhoa.png' %}"
+                            style="width: 100%;height: 100%;display: block;">
+                    </div>
+                    <div class="card__face card__face--back">
+                        <div class="card__content">
+                            <div class="card__header">
+                                <img src="{% static 'img/ava-vanhoa.png' %}" alt="" class="pp" />
+                                <h2>Đinh Quang Thành</h2>
+                            </div>
+                            <div class="card__body">
+                                <h3>Chủ tịch ban văn hóa</h3>
+                                <p> Một trong những nhân tố góp phần vô cùng to lớn trong quá trình hình thành và phát
+                                    triển nên JS đó chính là ban Văn hóa. Vì vậy, chẳng phải tự nhiên mà Văn hóa được
+                                    mệnh danh là “linh hồn” của JS.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card reveal">
+                <div class="card__inner" id="card3">
+                    <div class="card__face card__face--front">
+                        <h2>Ban truyền thông</h2>
+                        <img class="ban-card-img" src="{% static 'img/background-truyenthong.png' %}"
+                            style="width: 100%;height: 100%;display: block;">
+                    </div>
+                    <div class="card__face card__face--back">
+                        <div class="card__content">
+                            <div class="card__header">
+                                <img src="{% static 'img/ava-truyenthong.png' %}" alt="" class="pp" />
+                                <h2>Cấn Nguyễn Bảo Châu</h2>
+                            </div>
+                            <div class="card__body">
+                                <h3>Chủ tịch ban truyền thông</h3>
+                                <p>Nắm giữ vai trò tạo nên “giao diện” và hình ảnh chính, ban Truyền thông đang ngày
+                                    càng khẳng định được tầm quan trọng của mình ở JS.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card reveal">
+                <div class="card__inner" id="card4">
+                    <div class="card__face card__face--front">
+                        <h2>Ban đối ngoại</h2>
+                        <img class="ban-card-img" src="{% static 'img/background-doingoai.png' %}"
+                            style="width: 100%;height: 100%;display: block;">
+                    </div>
+                    <div class="card__face card__face--back">
+                        <div class="card__content">
+                            <div class="card__header">
+                                <img src="{% static 'img/ava-doingoai.png' %}" alt="" class="pp" />
+                                <h2>Nguyễn Minh Hoàng</h2>
+                            </div>
+                            <div class="card__body">
+                                <h3>Chủ tịch ban đối ngoại</h3>
+                                <p>Để đảm bảo được chất lượng các sản phẩm cũng như mối quan hệ của JS, chúng ta phải kể
+                                    đến công sức vô cùng to lớn của các thành viên ban Đối ngoại.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="card reveal">
+            <div class="card__inner" id="card5">
+                <div class="card__face card__face--front">
+                    <h2>Ban Nội dung</h2>
+                    <img class="ban-card-img" src="{% static 'img/background-noidung.png' %}"
+                        style="width: 100%;height: 100%;display: block;">
+                </div>
+                <div class="card__face card__face--back">
+                    <div class="card__content">
+                        <div class="card__header">
+                            <img src="{% static 'img/ava-noidung.png' %}" alt="" class="pp" />
+                            <h2>Vũ Thị Hà</h2>
+                        </div>
+                        <div class="card__body">
+                            <h3>Chủ tịch ban nội dung</h3>
+                            <p>Dựa trên mô hình Agile - một phương pháp phát triển phần mềm, bước đầu tiên cần làm là
+                                Brainstorm. Công việc này đòi hỏi tư duy ý tưởng sáng tạo nhưng cũng phải thật chu đáo,
+                                cẩn thận. Không ai khác, Ban Nội dung là những “thủ lĩnh” trong công việc này.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% comment %} this is end {% endcomment %}
+</div>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+
+<script>
+    $("#button-chuyenmon").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#content-chuyenmon").offset().top - 100
+        }, 2000);
+    });
+
+    $("#button-vanhoa").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#content-vanhoa").offset().top - 100
+        }, 2000);
+    });
+
+    $("#button-truyenthong").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#content-truyenthong").offset().top - 100
+        }, 2000);
+    });
+
+    $("#button-doingoai").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#content-doingoai").offset().top - 100
+        }, 2000);
+    });
+
+    $("#button-noidung").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#content-noidung").offset().top - 100
+        }, 2000);
+    });
+
+    const card1 = document.querySelector("#card1");
+    const card2 = document.querySelector("#card2");
+    const card3 = document.querySelector("#card3");
+    const card4 = document.querySelector("#card4");
+    const card5 = document.querySelector("#card5");
+
+    card1.addEventListener("click", function (e) {
+        card1.classList.toggle('is-flipped');
+    });
+
+    card2.addEventListener("click", function (e) {
+        card2.classList.toggle('is-flipped');
+    });
+
+    card3.addEventListener("click", function (e) {
+        card3.classList.toggle('is-flipped');
+    });
+
+    card4.addEventListener("click", function (e) {
+        card4.classList.toggle('is-flipped');
+    });
+
+    card5.addEventListener("click", function (e) {
+        card5.classList.toggle('is-flipped');
+    });
+
+    //reveal
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            } else {
+                reveals[i].classList.remove("active");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", reveal);
+
+
+</script>
+
+
+{% endblock %}

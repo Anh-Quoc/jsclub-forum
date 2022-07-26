@@ -1,0 +1,42 @@
+{% extends "pages/index.html"%}
+{% block title %}{% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/post.css' %}" type="text/css">
+{% for blog in data %}
+<div class="homee" style="padding-left: 50px; padding-right: 50px;padding-top: 65px;background: linear-gradient(to right, rgb(27, 26, 26), rgb(202, 168, 203));">
+    <div class="spaces"></div>
+
+<div class="back-blog">
+    <!-- <script>
+        let btnBack = document.querySelector('button');
+        btnBack.addEventListener('click', () => {
+        window.history.back();
+     });
+    </script> -->
+    <button class="back-button" onclick="history.back()"><a href="#">Back</a></button>
+     
+</div>
+
+<div class="blog-title">
+    <h1>{{blog.title}}</h1>
+</div>
+
+<div class="luot-view">
+    <h5>Lượt view: {{blog.countViewer}}</h5>
+</div>
+
+<div class="blog-content">
+    {{blog.content | safe}}
+</div>
+
+{% if status == 'Found' %}
+<div class="button-fixx">
+    <button class="fix-button"><a href="{{blog.urlBlog}}/chinh-sua/">Chỉnh sửa</a></button>
+</div>
+{% endif %}
+
+{% endfor %}
+{{status}}
+
+{% endblock %}

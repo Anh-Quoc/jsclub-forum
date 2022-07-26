@@ -1,0 +1,249 @@
+{% extends "pages/index.html" %}
+
+{% block title %}Bài Đăng- JS Club{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<img src="{% static 'img/b_blog.png' %}" style="width:100%;padding-left: 5%;padding-right: 5%;">
+<!-- <form action="" method="GET">
+    {% csrf_token %} -->
+<div class = "container" style="margin-top: 0px;padding-left: 0px;padding-right: 0px;">
+
+{% comment %} <label for="fname">Search Title:</label><br> {% endcomment %}
+<input class="form-control mr-sm-2" id = "myInput" type="text" name="searchTitle" style= "margin-bottom: 1%; margin-top: 2%;" placeholder="Search">
+<button class="btn btn-outline-success my-2 my-sm-0" id = "myBtn" onclick="search()">Search</button>
+<button class="btn btn-outline-success my-2 my-sm-0" onclick="sortBlog('date')">Sort Blog By Date</button>
+<button class="btn btn-outline-success my-2 my-sm-0" onclick="sortBlog('views')">Sort Blog By Views</button>
+
+</div>
+<!-- </form> -->
+
+<div class = "container" style="display: flex;flex-direction: row-reverse;padding-right: 0px;padding-left: 0px;">
+    <button type="button" class="btn btn-primary" onclick="location.href='/bai-dang/xuat-ban/';">Đăng bài</button>
+</div>
+
+<script>
+    function search() {
+        var titleSearch = document.getElementsByName('searchTitle')[0].value;
+        if (titleSearch.length !== 0) {
+            let urlSearchEndCode = encodeURIComponent(titleSearch);
+            window.location = "/bai-dang/search=" + urlSearchEndCode + "&page_id=1/";
+        }
+
+    }
+
+    function sortBlog(type) {
+        if (type == 'date') {
+            window.location = "/bai-dang/sort=" + 'date' + "&page_id=1/";
+        } else if (type == 'views') {
+            window.location = "/bai-dang/sort=" + 'views' + "&page_id=1/";
+        } else {
+            window.location = "/bai-dang/sort=" + 'date' + "&page_id=1/";
+        }
+    }
+
+    var input = document.getElementById("myInput");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myBtn").click();
+  }
+});
+
+</script>
+
+
+{% comment %} <button onclick="sortBlog('date')">Sort Blog By Date</button>
+<button onclick="sortBlog('views')">Sort Blog By Views</button> {% endcomment %}
+
+
+<style>
+    .col-list{
+        padding: 0px !important;
+        border: 1px solid rgb(223 223 223);
+      
+        width: 600px !important;
+      }
+      
+      .list-img {
+        height: 100%;
+          width:100%;
+      }
+      
+      
+      .nav-img {
+        border-radius: 100%;
+          height: 32px;
+          width: 32px
+      }
+      .title {
+        display: inline-block;
+      }
+      
+      .head-nav {
+        margin-left: 10px;
+        margin-top: 24px;
+      }
+      
+      .row {
+        justify-content: center;
+        margin-bottom: 30px;
+        cursor: pointer;
+        box-shadow: 0px 0px 10px 0px #3a333345;;
+      }
+      
+      .para-title{
+        text-align: justify;
+        margin-top: 10px;
+        font-size: 1.5rem;
+      }
+      
+      .para-detail {
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        text-align: justify;
+      }
+      
+      .view-list {
+          border-top: 1px solid #80808038;
+          padding-top: 5px;
+      }
+      
+      
+      
+    h3 {
+        color: red;
+    }
+
+    .img_thumbnail {
+        width: 300px;
+    }
+
+    .container {
+        margin-top: 20px;
+        
+    }
+
+    .btn-outline-success {
+        color: #2076f6;
+        border-color: #2076f6;
+    }
+
+    .btn-outline-success:hover {
+        color: #fff;
+        background-color: var(--blue);
+        border-color: var(--blue);
+    }
+
+    .pagination-container {
+        display: flex;
+        justify-content: center;
+
+    }
+
+.counter { background-color: #ffffff; padding: 20px 0; border-radius: 5px;}
+.count-title { font-size: 40px; font-weight: normal;  margin-top: 10px; margin-bottom: 0; text-align: center; }
+.count-text { font-size: 13px; font-weight: normal;  margin-top: 10px; margin-bottom: 0; text-align: center; }
+.fa-2x { margin: 0 auto; float: none; display: table; color: #4ad1e5; }
+
+    
+</style>
+{% comment %} list {% endcomment %}
+{% if status == 'Found' %}
+<center>
+    {% for blog in page_obj.object_list %}
+    <div class = "container">
+    <div class="row" onclick="location.href='/bai-dang/{{blog.urlBlog}}';">
+        <div class="col-sm-5 col-list">
+        <img class="list-img" src="/media/{{blog.thumbnail}}" alt="">
+        </div>
+        <div class="col-sm-7 col-list">
+         <div class="container">
+             <div class="nav-list">
+                 <div class="head-nav">
+                     <div class="title">
+                         <p style="top: 7%;font-size: 70%;position: absolute;margin-bottom: 0px;left: 4%;" >{{ blog.dateTime}}</p>
+                     </div>
+                     <div class="para-list">
+                         <h3 class="para-title"><a href="/bai-dang/{{blog.urlBlog}}"> {{ blog.title}}</a></h3></br>
+                         <p class="para-detail">{{ blog.description}}</p>
+                     </div>
+                     <div class="view-list" >
+                         <p style="line-height: 2rem;display: inline;">{{ blog.countViewer}}</p>
+                         <p style="display: inline;">Views</p>
+                     </div>
+                 </div>
+             </div>
+         </div>
+        </div>
+    </div>
+</div>
+    {% endfor %}
+
+    {% comment %} <h3>Tổng số trang: </h3>
+    {{totalPages}}<br>
+    <h3>Trang hiện tại: </h3>
+    <p>{{indexPage}}</p>
+    <br> {% endcomment %}
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-sm" style="padding-left: 0px; padding-right: 0px">
+                <div class="counter col_fourth">
+                    <i class="fa fa-code fa-2x"></i>
+                    <h2 class="count-text ">Tổng số trang</h2>
+                    <p class="timer count-title count-number" >{{totalPages}}</p>
+                  </div>
+            </div>
+            <div class="col-sm">
+                <div class="counter col_fourth">
+                    <i class="fa fa-coffee fa-2x"></i>
+                    <h2 class="count-text ">Trang hiện tại</h2>
+                    <p class="timer count-title count-number">{{indexPage}}</p>
+                  </div>
+            </div>
+          </div>
+
+        
+    </div>
+
+    <center>
+        <div class = "container pagination-container">
+        {% if page_obj.has_other_pages %} <ul class="pagination">
+            {% if page_obj.has_previous %}
+            <li class="page-item"><a class="page-link" href="/bai-dang/sort=date&page_id={{ page_obj.previous_page_number }}/">&laquo;</a></li>
+            {% else %}
+            <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+            {% endif %}
+
+            {% for i in page_obj.paginator.page_range %}
+            {% if page_obj.number == i %}
+            <li class="active page-item"><span class="page-link">{{ i }} <span class="sr-only">(current)</span></span></li>
+            {% else %}
+            <li class="page-item"><a class="page-link" href="/bai-dang/sort=date&page_id={{ i }}/">{{ i }}</a></li>
+            {% endif %}
+            {% endfor %}
+
+            {% if page_obj.has_next %}
+            <li class="page-item" ><a class="page-link" href="/bai-dang/sort=date&page_id={{ page_obj.next_page_number }}/">&raquo;</a></li>
+            {% else %}
+            <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+            {% endif %}
+        </ul>
+        {% endif %}
+    </div>
+    </center>
+</center>
+{%else%}
+
+<div class = "container">
+<h1>{{status}}</h1>
+</div>
+{% endif %}
+
+
+{% endblock %}

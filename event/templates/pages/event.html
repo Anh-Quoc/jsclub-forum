@@ -1,0 +1,257 @@
+{% extends "pages/index.html" %}
+
+{% block title %}Sự Kiện - JS Club{% endblock %}
+
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/event.css' %}" type="text/css">
+<!-- <div><img src="{% static 'img/background.png' %}" alt=""></div> -->
+<!-- <div class="grid wide content">
+     <img src="{% static 'img/0.Final.png' %}" alt=""> 
+</div> -->
+
+<body>
+    <div class="banner">
+        <img src="{% static 'img/cover.png' %} " alt="" style="width: 100%;" class="cover">
+        <div class="banner-content">
+            <div class="intro">
+                <h1 class="banner-heading">Event</h1>
+                <p class="banner-sub-heading">CLB thường xuyên tổ chức các sự kiện từ lớn đến nhỏ, tạo ra những hoạt
+                    động phong phú, phù hợp với nhu cầu và lợi ích của các thành viên trong CLB. Các hoạt động vừa mang
+                    tính giải trí vừa mang tính học thuật.</p>
+            </div>
+        </div>
+    </div>
+    <section class="navbox-wrapper">
+        <div class="container">
+            <div class="navbox flex gap-x-20">
+                <a class="box text-center flex-1" id="button-vanhoa" style="cursor: pointer;">
+                    <div class="box_img">
+                        <img src="{% static 'img/van_hoa.jpg'%}" alt="Sự kiện nội bộ"
+                            class="h-32 md:h-20 lg:h-32 object-cover">
+                    </div>
+                    <h3 class="box_text">Văn Hoá</h3>
+                </a>
+                <a class="box  text-center flex-1" id="button-hocthuat" style="cursor: pointer;">
+                    <div class="box_img">
+                        <img src="{% static 'img/code_battle.jpg'%}" alt="Sự kiện nội bộ"
+                            class="h-32 md:h-20 lg:h-32 object-cover">
+                    </div>
+                    <h3 class="box_text">Học Thuật</h3>
+                </a>
+                <a class="box  text-center flex-1" id="button-teambuilding" style="cursor: pointer;">
+                    <div class="box_img">
+                        <img src="{% static 'img/tbd.jpg'%}" alt="Sự kiện nội bộ"
+                            class="h-32 md:h-20 lg:h-32 object-cover">
+                    </div>
+                    <h3 class="box_text">Team Building</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="introduce-wrapper">
+        <div class="container">
+            <div class="introduce-content text-center" id="content-vanhoa">
+                <h2>Sự kiện văn hoá của clb</h2>
+                <p>Các sự kiện được CLB tổ chức hết sức đa dạng từ các buổi dã ngoại đến các hoạt động sinh hoạt tại
+                    trường. Thành viên CLB sẽ luôn được trau dồi kỹ năng, kinh nghiệm sống và gắn kết với nhau hơn như
+                    một đại gia đình. Mỗi sự kiện luôn để lại trong lòng các thành viên một dấu ấn khó quên trong quãng
+                    thời gian hoạt động và cả sau này</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="event-introduce-wrapper" id="women_day">
+        <div class="container">
+            <div class="flex event-introduce">
+                <div class=" event-content w-1-2 p-20 bg-pink flex flex-col justify-center">
+                    <h3 class="text-center">Women's Day</h3>
+                    <p>Để thể hiện tình cảm của mình, các anh em Jser đã tổ chức nên một bữa tiệc dành riêng cho chị em
+                        Jser nhân dịp ngày đặc biệt 8/3 để nói lời cảm ơn tới các chị em. </p>
+                </div>
+                <div class="event-image w-1-2">
+                    <img src="{% static 'img/8_3.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="event-introduce-wrapper" id="trung_thu">
+        <div class="container">
+            <div class="flex event-introduce reverse">
+                <div class=" event-content w-1-2 p-20 bg-pink flex flex-col justify-center">
+                    <h3 class="text-center">Trung Thu</h3>
+                    <p>Thay vì ra đường để hòa vào dòng người tấp nập, các thành viên đã cùng nhau tổ chức lên một buổi
+                        Trung thu sớm đầy màu sắc với các mini game hấp dẫn và những màn hóa trang thành Chú Cuội, Chị
+                        Hằng cười ra nước mắt nhưng không kém phần sáng tạo từ các đội chơi. Ngoài ra, cũng không thể
+                        thiếu đi những tiết mục truyền thống trong ngày lễ này như màn “múa lân” từ các “nghệ sĩ không
+                        chuyên” của câu lạc bộ, thả mình vào những bài hát về trung thu đầy nhộn nhịp và cuối cùng là
+                        tiết mục vô cùng quan trọng, phá cỗ!</p>
+                </div>
+                <div class="event-image w-1-2">
+                    <img src="{% static 'img/trung_thu.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="event-introduce-wrapper" id="noel">
+        <div class="container">
+            <div class="flex event-introduce">
+                <div class=" event-content w-1-2 p-20 bg-pink flex flex-col justify-center">
+                    <h3 class="text-center">Miracle At Christmas</h3>
+                    <p>Gia đình JS và những măng mon CTV đã có một đêm Noel ấm áp, vui vẻ và hạnh phúc bên nhau với
+                        chương trình "Miracle At Christmas" do chính các bạn CTV team 1 tổ chức</p>
+                </div>
+                <div class="event-image w-1-2">
+                    <img src="{% static 'img/noel.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section class="event-introduce-wrapper" id="talk_show">
+        <div class="container">
+            <div class="flex event-introduce reverse">
+                <div class=" event-content w-1-2 p-20 bg-pink flex flex-col justify-center">
+                    <h3 class="text-center">Talk's Show </h3>
+                    <p>Talk show: “Lối đi nào cho sinh viên IT?".Giúp cho các sinh viên chọn đúng được con đường mình
+                        đi. </p>
+                </div>
+                <div class="event-image w-1-2">
+                    <img src="{% static 'img/talkshow.jpg' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="event-introduce-wrapper" id="international">
+        <div class="container">
+            <div class="flex event-introduce">
+                <div class=" event-content w-1-2 p-20 bg-pink flex flex-col justify-center">
+                    <h3 class="text-center">International Day</h3>
+                    <p>Sự kiện "International Day" giúp mọi người cùng nhau trải nghiệm những nét tinh túy của văn hóa
+                        Nhật Bản được thu nhỏ bởi JS </p>
+                </div>
+                <div class="event-image w-1-2">
+                    <img src="{% static 'img/inter.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="introduce-wrapper">
+        <div class="container">
+            <div class="introduce-content text-center" id="content-hocthuat">
+                <h2>SỰ KIỆN HỌC THUẬT CỦA CLB</h2>
+                <p>Là một CLB học thuật JS không thể thiếu những cuộc thi, giải thưởng để tìm ra những người giỏi, những
+                    người chịu khó tìm tòi, khám phá, sẵn sàng thử sức mình qua các cuộc thi để phát triển bản thân.</p>
+            </div>
+        </div>
+    </section>
+    <section class="culture-wrapper">
+        <div class="container">
+            <div class="culture-box flex">
+                <div class="image-box w-2-5 pr-10">
+                    <img src="{% static 'img/code_battle.jpg' %}" alt="" class="object-cover rounded-3xl">
+                </div>
+                <div class="content-box w-3-5 flex flex-col justify-center">
+                    <h3> Code Battle</h3>
+                    <div class="hr"></div>
+                    <p>Code Battle là cuộc thi được JS cùng các clb của các trường khác như Học viện Bưu chính viễn
+                        thông, Đại học Thăng Long ,... tổ chức nhằm mục đích giúp sinh viên phát huy tinh thần học hỏi,
+                        tạo cơ hội giao lưu sinh viên giữa các trường.
+                    </p>
+                    <div class="hr-mb"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="culture-wrapper">
+        <div class="container">
+            <div class="culture-box flex">
+                <div class="image-box w-2-5 pr-10">
+                    <img src="{% static 'img/arena.jpg' %}" alt="" class="object-cover rounded-3xl">
+                </div>
+                <div class="content-box w-3-5 flex flex-col justify-center">
+                    <h3>Algorithm Arena</h3>
+                    <div class="hr"></div>
+                    <p>Sự kiện Đấu trường thuật toán - 𝘼𝙡𝙜𝙤𝙧𝙞𝙩𝙝𝙢 𝘼𝙧𝙚𝙣𝙖 được chính JS tổ chức để mài giũa
+                        kỹ năng của các thành viên thông qua các bài toán hack não.
+                    </p>
+                    <div class="hr-mb"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="culture-wrapper">
+        <div class="container">
+            <div class="culture-box flex">
+                <div class="image-box w-2-5 pr-10">
+                    <img src="{% static 'img/coding.png' %}" alt="" class="object-cover rounded-3xl">
+                </div>
+                <div class="content-box w-3-5 flex flex-col justify-center">
+                    <h3> Coding Project</h3>
+                    <div class="hr"></div>
+                    <p>Coding Project là cuộc thi lập trình game thường niên diễn ra hàng năm giữa các team trong clb.
+                        Nơi thể hiện tinh thần đoàn kết, tấu hài, và đặc biệt là nơi sản sinh ra những con game độc nhất
+                        vô nhị chỉ JS mới có.Mặc dù diễn ra online nhưng mọi người đều hoàn thành tốt vai trò và nhiệm
+                        vụ của mình.
+                    </p>
+                    <div class="hr-mb"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="culture-wrapper">
+        <div class="container">
+            <div class="culture-box flex">
+                <div class="image-box w-2-5 pr-10">
+                    <img src="{% static 'img/training.jpg' %}" alt="" class="object-cover rounded-3xl">
+                </div>
+                <div class="content-box w-3-5 flex flex-col justify-center">
+                    <h3> Training lớp học thuật</h3>
+                    <div class="hr"></div>
+                    <p>Bước vào một kỳ mới tràn đầy những trải nghiệm mới. Như một hoạt động thường niên của JS Club,
+                        các lớp training học thuật đã được mở ra nhằm ôn tập và cung cấp thêm những kiến thức mới từ cơ
+                        bản đến nâng cao về các ngôn ngữ lập trình.
+                    </p>
+                    <div class="hr-mb"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="introduce-wrapper">
+        <div class="container">
+            <div class="introduce-content text-center" id="content-teambuilding">
+                <h2>TEAMBUILDING</h2>
+                <p>Teambuilding chính là lúc để mọi người trong clb cùng nhau đi du lịch khắp Việt Nam để cùng nhau khám
+                    phá, vui chơi, tắm biển,... để cùng nhau xua đi những mệt mỏi đã phải trải qua trong kỳ học trước đó
+                    để bắt đầu chuẩn bị hành trang cho một kỳ học mới đầy thành công. Hãy cùng JS điểm qua 1 số kỳ
+                    Teambuilding đã trải qua.</p>
+            </div>
+        </div>
+    </section>
+    <section class="video-content flex items-center justify-center">
+        <video class="video" src="{% static 'img/Lookback.mp4' %}" controls>
+    </section>
+</body>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script>
+    $("#button-vanhoa").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#content-vanhoa").offset().top - 100
+        }, 1000);
+    });
+
+    $("#button-hocthuat").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#content-hocthuat").offset().top - 100
+        }, 1000);
+    });
+
+
+    $("#button-teambuilding").click(function () {
+        $('html, body').animate({
+            scrollTop: $("#content-teambuilding").offset().top - 100
+        }, 1000);
+    });
+</script>
+{% endblock %}

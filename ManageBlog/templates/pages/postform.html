@@ -1,0 +1,44 @@
+{% extends "pages/index.html"%}
+{% block title %}POST_FORM{% endblock %}
+{% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/postform.css' %}" type="text/css">
+<div class="homee" style="padding-left: 50px; padding-right: 50px; padding-top: 65px;background: linear-gradient(to right, rgb(27, 26, 26), rgb(202, 168, 203));">
+<style>
+    #id_title {
+        width: 80%;
+        height: 50px;
+        border-radius: .4rem;
+        box-shadow: 5px 10px rgb(63, 48, 65);
+    }
+
+    #id_description {
+        width: 100%;
+        height: 100px;
+        border-radius: .6rem;
+        box-shadow: 5px 10px rgb(63, 48, 65);
+    }
+</style>
+<div class="spaces"></div>
+<div class="formhead">
+    <h1>Blog's Form</h1>
+</div>
+<div class="form-part">
+    <div class="container-fluid form-content">
+        <form action="" method="POST">
+            {% csrf_token %}
+            <label class="form-lable">Title</label><br>
+            {{form.title}} <br>
+            <br><label class="form-lable">Description</label><br>
+            <div>
+                {{form.description}}
+            </div> <br>
+            <br><label class="form-lable">Content</label><br>
+            {{form.content}} <br>
+            <br>
+            <input type="submit" value="Submit" class="btn btn-success">
+        </form>
+    </div>
+</div>
+
+{% endblock %}

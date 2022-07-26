@@ -1,0 +1,104 @@
+.spaces{
+  padding-top: 40px;
+  background-color: linear-gradient(to right, rgb(0, 0, 0), rgb(219, 185, 221));;
+}
+
+.blog-title{
+    background-color: #fff;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: .6rem;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    box-shadow: 5px 10px rgb(63, 48, 65);
+}
+
+.blog-content{
+    background-color: #fff; 
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 50px;
+    padding-bottom: 40px;
+    padding-left: 50px;
+    padding-right:50px;
+    border-radius: 1rem;
+    box-shadow: 5px 10px rgb(63, 48, 65);
+}
+
+.button-fixx{
+    margin-top: 30px;
+     text-align: center;
+}
+
+.fix-button{
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: rgb(186, 147, 188);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 2px 6px rgb(73, 60, 74);
+}
+
+.fix-button a{
+    text-align: center;
+    color: #fff;
+}
+
+.fix-button:hover {background-color: rgb(147, 101, 150)}
+
+.fix-button:active {
+  background-color: rgb(147, 101, 150);
+  box-shadow: 0 5px rgb(20, 20, 20);
+  transform: translateY(4px);
+}
+
+.back-blog{
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.back-button{
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: rgb(186, 147, 188);
+  border: none;
+  border-radius: 15px;
+  box-shadow: 2px 6px rgb(73, 60, 74);
+}
+
+.back-button a{
+    text-align: center;
+    color: #fff;
+}
+
+.back-button:hover {background-color: rgb(147, 101, 150)}
+
+.back-button:active {
+  background-color: rgb(147, 101, 150);
+  box-shadow: 0 5px rgb(20, 20, 20);
+  transform: translateY(4px);
+}
+
+.luot-view{
+  background-color: rgb(147, 101, 150);
+  box-shadow: 0 5px rgb(20, 20, 20);
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 500px;
+  margin-right: 500px;
+  border-radius: .5rem;
+}

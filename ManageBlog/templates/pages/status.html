@@ -1,0 +1,40 @@
+{% extends "pages/index.html" %}
+
+{% block title %}Bài Đăng- JS Club{% endblock %}
+
+{% block content %}
+{% load static %}
+
+<div class="status_back">
+    <div class="status-part">
+        <h1>{{message}}</h1>
+        <button class="status_button"><a href="/bai-dang">Back</a></button>
+    </div>
+</div>
+<style>
+    .status_button{
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        border-radius: .4rem;
+        box-shadow: 2px 6px rgb(0, 0, 0);
+    }
+    .status_back{
+        margin-top: 20%;
+        margin-bottom: 20%;
+    }
+    .status-part{
+        border-radius: .5rem;
+        padding-top: 3%;
+        padding-bottom: 3%;
+        background-color: rgb(170, 136, 201);
+        box-shadow: 2px 6px rgb(73 60 74);
+        text-align: center;
+        color: #fff;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+</style>
+
+{% endblock %}
