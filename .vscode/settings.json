@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/a73cd43f-b80a-455c-b373-da13b27579d9/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/jsclub-forum",
+    "appService.deploySubpath": "."
+}
